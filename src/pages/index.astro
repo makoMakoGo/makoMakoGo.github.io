@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPosts, getPostUrl, groupPostsByYear, formatDate } from '../lib/posts';
+import { pagePaths, pageUrl, withBase } from '../lib/site';
+
+const posts = await getPosts();
+const grouped = groupPostsByYear(posts);
+const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
+---
+
+<BaseLayout title="首页">
+  <div class="page page-index">
+    {years.map((year) => (
+      <div class="list-post">
+        <h2 id={year}>{year}</h2>
+        <ul>
+          {grouped[year].map((post) => (
+            <li>
+              <span class="date">{formatDate(post.data.date)}</span>
+              <div class="title">
+                <a href={withBase(getPostUrl(post))} class="hover-underline">{post.data.title}</a>
+              </div>
+              <div class="categories">
+                {post.data.categories.map((category) => (
+                  <a href={withBase(`${pageUrl(pagePaths.categories)}#${category}`)} class="hover-underline">{category}</a>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import { site, withBase } from '../lib/site';
+---
+
+<footer class="footer">
+  <span>{site.footerText}</span>
+  <a href={withBase('/static/xml/rss.xml')}>RSS订阅</a>
+  <span>Theme Based on</span>
+  <a href="https://github.com/TMaize/tmaize-blog">TMaize</a>
+  <div class="footer-btn theme-toggler hide">
+    <i class="svg-icon icon-theme-light"></i>
+  </div>
+  <div class="footer-btn to-top">
+    <i class="svg-icon icon-arrow-top"></i>
+  </div>
+</footer>

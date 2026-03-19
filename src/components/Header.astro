@@ -1,0 +1,12 @@
+---
+import { pageUrl, site, withBase } from '../lib/site';
+---
+
+<header class="header">
+  <a href={withBase('/')} class="logo" aria-label="首页"></a>
+  <nav class="menu">
+    {site.menu.map((item) => (
+      <a href={withBase(pageUrl(item.url))} class="hover-underline">{item.title}</a>
+    ))}
+  </nav>
+</header>

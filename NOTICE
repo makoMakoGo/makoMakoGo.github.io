@@ -1,0 +1,36 @@
+makoMakoGo's Blog
+Copyright (c) 2026 makoMakoGo
+
+Upstream attribution
+
+This repository was initialized from a blog codebase whose visual direction and
+part of the earlier structure were derived from the following upstream project:
+
+- TMaize/tmaize-blog
+  https://github.com/TMaize/tmaize-blog
+
+The upstream project is distributed under the MIT License. The upstream
+copyright notice is retained in this repository's LICENSE file.
+
+Repository code
+
+The current codebase has been refactored and rebuilt around Astro. Unless a
+file states otherwise, the repository's code skeleton, implementation, build
+configuration, and supporting source files are distributed under the MIT
+License in LICENSE.
+
+Content and branding
+
+Unless a file states otherwise, the following materials are not included in the
+repository's MIT reuse grant:
+
+- blog posts and draft content under src/content/posts
+- personal branding and site identity assets
+- the current avatar, favicon, touch icon, and similar site-specific media
+
+Those materials remain Copyright (c) 2026 makoMakoGo. All rights reserved.
+
+Reuse guidance
+
+If you reuse this repository's code skeleton, keep LICENSE and this NOTICE file
+with your copy, and replace site-specific content and branding before reuse.

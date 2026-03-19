@@ -1,0 +1,91 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site, withBase } from '../lib/site';
+
+interface Props {
+  title: string;
+  layoutType?: 'page' | 'post';
+  pageDescription?: string;
+  pageKeywords?: string;
+}
+
+const {
+  title,
+  layoutType = 'page',
+  pageDescription = site.description,
+  pageKeywords = site.keywords,
+} = Astro.props;
+
+const buildAt = new Date().toISOString().replace(/\D/g, '').slice(0, 14);
+const pageTitle = `${title}-${site.title}`;
+const cleanupScriptUrl = withBase(`/static/js/sw-cleanup.js?t=${buildAt}`);
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>{pageTitle}</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="zh-CN" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="author" content={site.author} />
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content={pageKeywords} />
+    <link rel="icon" href={withBase('/favicon.ico')} />
+    <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
+    <link rel="stylesheet" href={withBase(`/static/css/common.css?t=${buildAt}`)} />
+    <link rel="stylesheet" href={withBase('/static/css/theme-dark.css')} />
+    {layoutType === 'post' ? (
+      <>
+        <link rel="stylesheet" href={withBase(`/static/css/post.css?t=${buildAt}`)} />
+        <link rel="stylesheet" href={withBase('/static/css/code-dark.css')} />
+        <link rel="stylesheet" href={withBase('/static/css/code-light.css')} />
+        <style is:inline>
+          {`.astro-code{font-size:13px;padding:10px;overflow:auto;border-radius:2px;max-height:610px;line-height:1.6;background:#f8f8f8}.astro-code code{background:transparent!important;padding:0!important;margin:0!important;border-radius:0!important}.dark .astro-code{background:#161b22;color:#abb2bf}.dark .astro-code span{color:inherit}`}
+        </style>
+      </>
+    ) : (
+      <link rel="stylesheet" href={withBase(`/static/css/page.css?t=${buildAt}`)} />
+    )}
+    <script is:inline define:vars={{ baseUrl: site.baseUrl, buildAt, author: site.author, domainUrl: site.domainUrl, siteTitle: site.title }}>
+      window.blog = {
+        baseurl: baseUrl,
+        buildAt,
+        author,
+        domainUrl,
+        siteTitle,
+        darkMode: false,
+        initDarkMode(flag) {
+          if (flag && flag === 'true') this.darkMode = true;
+          else if (flag && flag === 'false') this.darkMode = false;
+          else this.darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.className = this.darkMode ? 'dark' : '';
+          document.querySelector('meta[name=theme-color]').setAttribute('content', this.darkMode ? '#2D2E32' : '#FFFFFF');
+        },
+      };
+      window.blog.initDarkMode(localStorage.darkMode);
+    </script>
+    <script is:inline type="text/javascript" src={cleanupScriptUrl}></script>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+    <script is:inline type="text/javascript" src={withBase(`/static/js/blog.js?t=${buildAt}`)}></script>
+    <script is:inline type="text/javascript" src={withBase(`/static/js/search.js?t=${buildAt}`)}></script>
+    {site.extClickEffect && (
+      <script is:inline>
+        ;(function () {
+          var textArr = ['富强', '民主', '文明', '和谐', '自由', '平等', '公正', '法治', '爱国', '敬业', '诚信', '友善']
+          window.blog.initClickEffect(textArr)
+        })()
+      </script>
+    )}
+  </body>
+</html>
