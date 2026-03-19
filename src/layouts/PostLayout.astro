@@ -1,0 +1,27 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { site } from '../lib/site';
+
+const frontmatter = Astro.props.frontmatter ?? Astro.props;
+const postDate = frontmatter.date ? new Date(frontmatter.date) : undefined;
+const subtitle = postDate ? `${site.author} 于 ${postDate.getFullYear()}-${String(postDate.getMonth() + 1).padStart(2, '0')}-${String(postDate.getDate()).padStart(2, '0')} 发布` : '';
+---
+
+<BaseLayout
+  title={frontmatter.title}
+  layoutType="post"
+  pageDescription={frontmatter.description || frontmatter.title}
+  pageKeywords={frontmatter.categories?.length ? `${site.author},${frontmatter.categories.join(',')}` : site.keywords}
+>
+  <div class="page page-post">
+    <h1 class="title" id={frontmatter.title}>{frontmatter.title}</h1>
+    {subtitle && (
+      <div class="subtitle">
+        <span>{subtitle}</span>
+      </div>
+    )}
+    <div class="post">
+      <slot />
+    </div>
+  </div>
+</BaseLayout>

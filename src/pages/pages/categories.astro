@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPosts, getCategoryMap, getPostUrl, formatDate } from '../../lib/posts';
+import { withBase } from '../../lib/site';
+
+const posts = await getPosts();
+const categories = getCategoryMap(posts);
+const names = Object.keys(categories);
+---
+
+<BaseLayout title="文章分类">
+  <div class="page page-categories">
+    <div class="list-category">
+      <h2>所有分类</h2>
+      <div>
+        {names.map((category) => (
+          <a href={`javascript:document.getElementById('${category}').scrollIntoView()`}>{category}</a>
+        ))}
+      </div>
+    </div>
+    {names.map((category) => (
+      <div class="list-post">
+        <h2 id={category}>{category}</h2>
+        <ul>
+          {categories[category].map((post) => (
+            <li>
+              <span class="date">{formatDate(post.data.date)}</span>
+              <div class="title">
+                <a href={withBase(getPostUrl(post))} class="hover-underline">{post.data.title}</a>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</BaseLayout>
