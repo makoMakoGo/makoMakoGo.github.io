@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "packageManager": "npm@10.9.3",
+  "packageManager": "npm@11.9.0",
   "scripts": {
     "dev": "astro dev --host 127.0.0.1 --port 4321 --strictPort",
     "build": "astro build",
