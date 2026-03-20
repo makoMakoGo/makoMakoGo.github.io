@@ -17,6 +17,10 @@ Personal blog site (Chinese-language) built with Astro v6. Forked from TMaize/tm
 
 No test runner or linter is configured.
 
+## Git
+
+Commit subjects: capitalized imperative, no type prefix, no scope.
+
 ## Architecture
 
 **Content Layer API** (`src/content.config.ts`): Blog posts are Markdown/MDX files in `src/content/posts/` loaded via Astro's glob loader with Zod schema validation (`title`, `date`, `categories`, `description`, `draft`, `slug?`).
