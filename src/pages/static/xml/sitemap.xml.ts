@@ -13,7 +13,7 @@ export const GET: APIRoute = async () => {
     pageUrl(pagePaths.links),
     pageUrl(pagePaths.chat),
     pageUrl(pagePaths.about),
-    ...posts.map((post) => getPostUrl(post)),
+    ...posts.map((post: import('../../../lib/posts').PostEntry) => getPostUrl(post)),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls

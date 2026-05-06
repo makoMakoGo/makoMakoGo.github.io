@@ -3,9 +3,9 @@ import { pageUrl } from './site';
 
 export type PostEntry = CollectionEntry<'posts'>;
 
-export async function getPosts() {
-  const posts = await getCollection('posts', ({ data }) => !data.draft);
-  return posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+export async function getPosts(): Promise<PostEntry[]> {
+  const posts = await getCollection('posts', (post: PostEntry) => !post.data.draft);
+  return posts.sort((a: PostEntry, b: PostEntry) => b.data.date.getTime() - a.data.date.getTime());
 }
 
 export function getPostSegments(post: PostEntry) {

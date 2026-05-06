@@ -7,7 +7,7 @@ export const prerender = true;
 export const GET: APIRoute = async () => {
   const posts = await getPosts();
   const items = posts
-    .map((post) => {
+    .map((post: import('../../../lib/posts').PostEntry) => {
       const link = `${site.domainUrl}${site.baseUrl}${getPostUrl(post)}`;
       return `<item><title>${escapeXml(post.data.title)}</title><link>${escapeXml(link)}</link><guid>${escapeXml(link)}</guid><pubDate>${post.data.date.toUTCString()}</pubDate><description>${escapeXml(post.data.description || getPostExcerpt(post))}</description></item>`;
     })

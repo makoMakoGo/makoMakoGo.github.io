@@ -21,7 +21,7 @@ const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
                 <a href={withBase(getPostUrl(post))} class="hover-underline">{post.data.title}</a>
               </div>
               <div class="categories">
-                {post.data.categories.map((category) => (
+                {post.data.categories.map((category: string) => (
                   <a href={withBase(`${pageUrl(pagePaths.categories)}#${category}`)} class="hover-underline">{category}</a>
                 ))}
               </div>

@@ -22,7 +22,7 @@ const posts = await getPosts();
       <i class="svg-icon icon-loading"></i>
     </h1>
     <ul class="list-search">
-      {posts.map((post) => (
+      {posts.map((post: import('../../lib/posts').PostEntry) => (
         <li hidden>
           <a href={withBase(getPostUrl(post))}>
             <p class="title">{post.data.title}</p>
