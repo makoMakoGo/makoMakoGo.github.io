@@ -3,6 +3,7 @@ dist
 .astro
 .DS_Store
 npm-debug.log*
+.lsp.json
 
 .claude/
 .codex/
