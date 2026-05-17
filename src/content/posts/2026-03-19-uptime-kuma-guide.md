@@ -1,5 +1,5 @@
 ---
-title: Uptime Kuma 部署与配置笔记
+title: Uptime Kuma 自托管部署实践
 date: 2026-03-19
 description: 自托管服务监控工具 Uptime Kuma 的部署与配置记录。
 categories:

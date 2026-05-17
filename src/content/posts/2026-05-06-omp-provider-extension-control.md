@@ -1,5 +1,5 @@
 ---
-title: OMP provider 与 extension 控制粒度笔记
+title: OMP provider 与 extension 控制粒度对比
 date: 2026-05-06
 description: 梳理 OMP 中 disabledProviders 与 disabledExtensions 的控制粒度、边界与 capability 差异。
 categories:

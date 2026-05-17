@@ -1,5 +1,5 @@
 ---
-title: OMP 搜索功能与 Codex 自定义反代补丁设计笔记
+title: OMP 搜索与 Codex 自定义反代补丁设计
 date: 2026-05-06
 description: 梳理 OMP web search provider 链、Codex provider 的 BYOK/OAuth 扩展与自定义反代补丁思路。
 categories:

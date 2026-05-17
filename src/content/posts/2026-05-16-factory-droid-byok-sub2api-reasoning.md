@@ -1,5 +1,5 @@
 ---
-title: "Factory Droid BYOK 接 sub2api：给 GPT-5.5 / GPT-5.4 配三挡思考强度"
+title: "Factory Droid BYOK 接 sub2api：给 GPT 配三挡思考强度"
 date: 2026-05-16
 description: "记录 Factory Droid BYOK 通过 sub2api 接入 GPT-5.5 / GPT-5.4，并用 extraArgs.reasoning.effort 固定 medium、high、xhigh 三挡思考强度。"
 categories:

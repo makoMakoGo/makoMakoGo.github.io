@@ -1,5 +1,5 @@
 ---
-title: Codex VS Code 扩展污染 WSLENV 导致 PATHEXT 只剩 .CPL
+title: Codex VS Code 扩展污染 WSLENV 导致 PATHEXT 异常
 date: 2026-05-04
 description: 记录 Codex VS Code 扩展把 PATHEXT 当路径列表传入 WSLENV 后破坏 PowerShell 命令解析的问题与修复。
 categories:

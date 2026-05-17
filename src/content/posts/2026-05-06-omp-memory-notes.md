@@ -1,5 +1,5 @@
 ---
-title: OMP Memory 功能笔记
+title: OMP Memory 的工作机制
 date: 2026-05-06
 description: 梳理 OMP memory 的启动注入、两阶段抽取汇总流程、存储位置与项目隔离边界。
 categories:
