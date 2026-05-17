@@ -51,6 +51,22 @@ Required frontmatter: `title`, `date` (yyyy-mm-dd), `categories` (array), `descr
 
 Optional frontmatter: `draft: true` (excluded from build), `slug` (overrides filename slug).
 
+### Category convention
+
+Each post has exactly one category in the `categories` array. The vocabulary is fixed to the following 7 buckets — do not invent new ones without updating this list:
+
+| Category | What goes here |
+|---|---|
+| `Harness` | AI agent 内部机制、提示词机制（subagent/swarm/memory 机制、prompt 风格/路由/结构、agent 内部源码级拆解） |
+| `Vibe Coding` | AI agent 的配置与使用（BYOK 配置、provider/extension 控制、跨 agent 集成选型、reasoning effort 配置等） |
+| `Tooling` | 接入踩坑、环境踩坑、日志解读（WSL bug、sub2api 接入失败、agent 日志占位符等不深挖 agent 内部的问题） |
+| `LLM` | 模型本体行为（口癖、模型层 bug、模型能力研究） |
+| `前端` | 前端建站相关 |
+| `运维` | 部署、监控、自托管 |
+| `逆向` | 抓包、协议复现、reverse engineering |
+
+Boundary rule: 机制 vs 配置是 Harness 和 Vibe Coding 的分水岭。"agent 怎么工作的"→ Harness；"agent 怎么配 / 怎么用 / 怎么选"→ Vibe Coding。
+
 ## Deployment
 
 GitHub Actions workflow (`.github/workflows/deploy.yml`): Node 22, `npm ci`, `npm run build`, deploys `./dist` to GitHub Pages.
