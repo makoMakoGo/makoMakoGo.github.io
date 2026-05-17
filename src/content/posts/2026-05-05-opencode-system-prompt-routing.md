@@ -3,8 +3,7 @@ title: OpenCode 系统提示词的模型名路由机制
 date: 2026-05-05
 description: 解析 OpenCode 如何根据模型 ID 字符串选择不同 prompt 文件，并叠加运行时上下文形成最终系统提示词。
 categories:
-  - OpenCode
-  - Prompt Engineering
+  - Harness
 draft: false
 ---
 

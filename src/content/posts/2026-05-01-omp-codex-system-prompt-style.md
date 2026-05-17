@@ -3,9 +3,7 @@ title: "OMP 与 Codex 内置系统提示词风格差异"
 date: 2026-05-01
 description: "对比 Oh My Pi 与 Codex CLI 内置系统提示词在结构、语气、工具纪律、规划边界和产品取向上的差异。"
 categories:
-  - Oh My Pi
-  - Codex
-  - Prompt Engineering
+  - Harness
 draft: false
 ---
 

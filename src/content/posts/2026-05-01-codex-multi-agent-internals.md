@@ -3,8 +3,7 @@ title: Codex Multi-Agent 底层细节
 date: 2026-05-01
 description: 梳理 Codex multi-agent feature flag 矩阵、v1/v2 tool surface 和 role 配置生效机制。
 categories:
-  - Codex
-  - AI Agent
+  - Harness
 draft: false
 ---
 

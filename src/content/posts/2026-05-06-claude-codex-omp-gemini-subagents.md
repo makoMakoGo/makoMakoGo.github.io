@@ -3,11 +3,7 @@ title: Claude / Codex / OMP / Gemini CLI 的 Sub-Agent 机制整理
 date: 2026-05-06
 description: 整理 Claude Code、Codex、Oh My Pi 与 Gemini CLI 的 sub-agent 定义方式、派发模型与隔离边界。
 categories:
-  - AI Agent
-  - Claude Code
-  - Codex
-  - Oh My Pi
-  - Gemini CLI
+  - Harness
 draft: false
 ---
 

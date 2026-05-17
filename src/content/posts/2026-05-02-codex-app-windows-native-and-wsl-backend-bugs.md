@@ -3,8 +3,6 @@ title: Codex App Windows Native 与 WSL Backend Bug 汇总
 date: 2026-05-02
 description: 整理 Codex CLI / Codex App 在 Windows 原生环境和 WSL 后端下的沙箱、路径、配置与 interop 问题。
 categories:
-  - Codex
-  - WSL
   - Tooling
 draft: false
 ---

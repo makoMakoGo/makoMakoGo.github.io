@@ -3,7 +3,6 @@ title: Astro 初始化小记
 date: 2026-03-15
 description: 记录从一个 fork 来的旧 Jekyll 主题仓库起新站，并改成 Astro 底座时的取舍与做法。
 categories:
-  - 博客
   - 前端
 draft: false
 ---

@@ -3,9 +3,7 @@ title: Moonshot Kimi Prompt 兼容性问题
 date: 2026-05-05
 description: 分析 OpenCode generic default prompt 对 Kimi coding / reasoning benchmark 的影响，以及 Kimi-specific prompt 路由修复。
 categories:
-  - OpenCode
-  - Prompt Engineering
-  - Kimi
+  - Harness
 draft: false
 ---
 

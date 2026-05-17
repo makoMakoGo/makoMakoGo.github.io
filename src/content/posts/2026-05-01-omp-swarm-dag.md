@@ -3,8 +3,7 @@ title: OMP Swarm DAG 编排
 date: 2026-05-01
 description: 梳理 OMP swarm-extension 的 YAML 结构、执行模式、DAG 调度与 agent 间通信边界。
 categories:
-  - Oh My Pi
-  - AI Agent
+  - Harness
 draft: false
 ---
 

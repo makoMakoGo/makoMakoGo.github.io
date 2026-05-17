@@ -3,12 +3,7 @@ title: Code Agent 联网搜索接入大合集
 date: 2026-05-11
 description: 梳理 Coding Agent 可接入的 Web Search、网页读取、文档检索和 MCP 方案，以及它们适合放在什么位置。
 categories:
-  - AI Agent
-  - Search
-  - MCP
-  - Claude Code
-  - Codex
-  - Oh My Pi
+  - Vibe Coding
 draft: false
 ---
 

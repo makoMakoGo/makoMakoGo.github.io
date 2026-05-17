@@ -3,8 +3,7 @@ title: Claude Code forked subagent 机制说明
 date: 2026-04-30
 description: 梳理 CLAUDE_CODE_FORK_SUBAGENT 开关、后台任务语义、与 named subagent 的行为差异。
 categories:
-  - Claude Code
-  - AI Agent
+  - Harness
 draft: false
 ---
 

@@ -3,8 +3,6 @@ title: "OMP OpenAI Pro + sub2api Responses 接入踩坑记录"
 date: 2026-05-02
 description: "记录 OMP 通过 sub2api 接入 OpenAI Pro / Codex OAuth Responses 路径时的配置、失败模式和排查顺序。"
 categories:
-  - Oh My Pi
-  - OpenAI
   - Tooling
 draft: false
 ---

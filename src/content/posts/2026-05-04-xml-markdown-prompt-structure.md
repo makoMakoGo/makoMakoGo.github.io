@@ -3,8 +3,7 @@ title: Markdown Heading 与 XML Tag 在全局提示词中的混用原则
 date: 2026-05-04
 description: 结合 Anthropic 文档、Claude Code memory 文档、HumanLayer 经验和本地源码观察，总结全局提示词中 Markdown 与 XML tag 的分工。
 categories:
-  - Prompt Engineering
-  - Claude Code
+  - Harness
 draft: false
 ---
 

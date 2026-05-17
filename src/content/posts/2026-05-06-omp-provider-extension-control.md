@@ -3,8 +3,7 @@ title: OMP provider 与 extension 控制粒度笔记
 date: 2026-05-06
 description: 梳理 OMP 中 disabledProviders 与 disabledExtensions 的控制粒度、边界与 capability 差异。
 categories:
-  - Oh My Pi
-  - Tooling
+  - Vibe Coding
 draft: false
 ---
 ## 1. 先说结论

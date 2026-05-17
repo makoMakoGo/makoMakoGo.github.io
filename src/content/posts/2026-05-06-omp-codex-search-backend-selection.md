@@ -3,9 +3,7 @@ title: OMP Codex 搜索后端选择笔记
 date: 2026-05-06
 description: 解释 OMP `search --provider codex` 的顶层 provider 选择、自定义 backend 精确匹配与 OAuth fallback 关系。
 categories:
-  - Oh My Pi
-  - Codex
-  - Search
+  - Harness
 draft: false
 ---
 ## 1. 先说结论

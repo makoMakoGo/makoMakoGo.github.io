@@ -3,8 +3,7 @@ title: Oh My Pi 中的 Agent、Subagent 与 Swarm 学习笔记
 date: 2026-05-06
 description: 整理 OMP 的 task delegation、默认子代理、自定义 subagent 与 YAML DAG swarm 的分层关系。
 categories:
-  - Oh My Pi
-  - AI Agent
+  - Harness
 draft: false
 ---
 ## 1. 先说结论

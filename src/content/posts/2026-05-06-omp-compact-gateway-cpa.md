@@ -3,9 +3,7 @@ title: OMP /compact、Responses 网关与 CLIProxyAPI 联调笔记
 date: 2026-05-06
 description: 梳理 OMP /compact 与 OpenAI Responses 网关、new-api distributor、CLIProxyAPI(CPA) 之间的路由关系。
 categories:
-  - Oh My Pi
-  - Codex
-  - Tooling
+  - Harness
 draft: false
 ---
 ## 1. 先说结论

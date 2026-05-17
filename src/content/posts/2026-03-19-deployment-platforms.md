@@ -4,7 +4,6 @@ date: 2026-03-19
 description: Docker、Vercel、Netlify、Render、Railway、Cloudflare Workers、Deno Deploy——这些部署技术各自解决什么问题，怎么选。
 categories:
   - 运维
-  - 开发
 draft: false
 ---
 

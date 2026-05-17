@@ -3,7 +3,6 @@ title: Claude Code <synthetic> 模型名占位符
 date: 2026-04-25
 description: 解释 Claude Code 会话日志里的 <synthetic> 模型记录为何出现，以及它与请求失败、限速和上下文溢出的关系。
 categories:
-  - Claude Code
   - Tooling
 draft: false
 ---
