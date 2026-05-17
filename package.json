@@ -11,10 +11,15 @@
     "check": "astro-check"
   },
   "dependencies": {
-    "astro": "^6.0.6"
+    "astro": "^6.3.3"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.8",
-    "typescript": "^5.9.3"
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "yaml-language-server": {
+      "yaml": "2.9.0"
+    }
   }
 }
