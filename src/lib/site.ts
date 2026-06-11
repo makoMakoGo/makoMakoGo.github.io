@@ -17,7 +17,13 @@ export const site = {
   extClickEffect: true,
   extMath: false,
   extCount: false,
-  links: [] as Array<{ title: string; url: string; desc?: string }>,
+  links: [
+    {
+      title: 'veyliss',
+      url: 'https://veyliss.top/',
+      desc: '探索技术，记录成长，分享所学。',
+    },
+  ] as Array<{ title: string; url: string; desc?: string }>,
   menu: [
     { title: '首页', url: '/' },
     { title: '归类', url: pagePaths.categories },
