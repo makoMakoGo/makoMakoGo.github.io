@@ -14,7 +14,7 @@ const names = Object.keys(categories);
       <h2>所有分类</h2>
       <div>
         {names.map((category) => (
-          <a href={`javascript:document.getElementById('${category}').scrollIntoView()`}>{category}</a>
+          <a href={`#${category}`}>{category}</a>
         ))}
       </div>
     </div>

@@ -14,7 +14,7 @@ const subtitle = postDate ? `${site.author} 于 ${postDate.getFullYear()}-${Stri
   pageKeywords={frontmatter.categories?.length ? `${site.author},${frontmatter.categories.join(',')}` : site.keywords}
 >
   <div class="page page-post">
-    <h1 class="title" id={frontmatter.title}>{frontmatter.title}</h1>
+    <h1 class="title">{frontmatter.title}</h1>
     {subtitle && (
       <div class="subtitle">
         <span>{subtitle}</span>

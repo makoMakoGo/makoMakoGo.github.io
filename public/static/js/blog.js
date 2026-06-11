@@ -26,44 +26,7 @@
   console.info(`%c Site   %c ${blog.domainUrl}`, style1, style2)
 
   blog.ready = onReady
-  blog.trim = (value) => String(value).trim()
   blog.escapeHtml = escapeHtml
-  blog.hasClass = (element, className) => element?.classList.contains(className) ?? false
-  blog.addClass = (element, className) => element?.classList.add(className)
-  blog.removeClass = (element, className) => element?.classList.remove(className)
-  blog.ajax = function (option, success, fail) {
-    const controller = new AbortController()
-    const timeout = window.setTimeout(() => controller.abort(), option.timeout || 10000)
-
-    fetch(option.url, {
-      method: (option.method || 'GET').toUpperCase(),
-      signal: controller.signal,
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw {
-            error: '状态错误',
-            code: response.status,
-          }
-        }
-        return response.text()
-      })
-      .then(success)
-      .catch((error) => {
-        if (error?.name === 'AbortError') {
-          fail({ error: '请求超时' })
-          return
-        }
-        if (error?.error) {
-          fail(error)
-          return
-        }
-        fail({ error: '请求失败' })
-      })
-      .finally(() => {
-        window.clearTimeout(timeout)
-      })
-  }
 
   blog.initClickEffect = function (textList) {
     window.addEventListener('click', function (event) {

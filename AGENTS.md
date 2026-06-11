@@ -31,17 +31,19 @@ Commit subjects: capitalized imperative, no type prefix, no scope.
 - XML feeds: `src/pages/static/xml/` — `rss.xml.ts`, `search.xml.ts`, `sitemap.xml.ts` (APIRoute endpoints)
 - Build format is `file` (individual `.html` files, no `/index.html` nesting)
 
-**Layout hierarchy**: `BaseLayout.astro` (HTML shell, meta, CSS, scripts, dark mode) → `PostLayout.astro` (article title/subtitle wrapper). The `layoutType` prop controls which CSS is loaded (`page.css` vs `post.css` + code highlighting).
+**Layout hierarchy**: `BaseLayout.astro` (HTML shell, meta, CSS, scripts, dark mode) → `PostLayout.astro` (article title/subtitle wrapper). The `layoutType` prop controls which CSS is loaded (`page.css` vs `post.css`).
 
-**Centralized config** (`src/lib/site.ts`): Site title, description, menu items, feature flags (`extClickEffect`, `extMath`, `extCount`), URLs, friend links.
+**Centralized config** (`src/lib/site.ts`): Site title, description, menu items, feature flags (`extClickEffect`), URLs, friend links.
 
 **URL helpers** (`src/lib/posts.ts`): `withBase(path)` prepends baseUrl; `pageUrl(path)` appends `.html` in production.
 
 **Dark mode**: CSS class-based (`html.dark`), persisted in `localStorage.darkMode`, falls back to `prefers-color-scheme`. Uses a 500ms CSS transition on theme toggle.
 
-**Client JS** (vanilla, in `public/static/js/`): `blog.js` (dark mode toggle, image lightbox, click text effect), `search.js` (fetches `search.xml` for client-side full-text search with CJK support), `sw-cleanup.js` (legacy Jekyll service worker cleanup).
+**Client JS** (vanilla, in `public/static/js/`): `blog.js` (dark mode toggle, image lightbox, click text effect), `search.js` (fetches `search.xml` for client-side full-text search with CJK support).
 
-**Styling**: Plain CSS in `public/static/css/` — no preprocessor, no Tailwind. Separate files for common, page, post, dark theme, and code highlighting themes.
+**Styling**: Plain CSS in `public/static/css/` — no preprocessor, no Tailwind. Separate files for common, page, post, and dark theme.
+
+**Syntax highlighting**: Shiki dual themes (`github-light`/`github-dark`, `defaultColor: false`) configured in `astro.config.mjs`. Shiki emits `--shiki-light`/`--shiki-dark` CSS variables; `post.css` consumes them and switches on `html.dark`.
 
 ## Writing Content
 
@@ -67,10 +69,10 @@ Each post has exactly one category in the `categories` array. The vocabulary is 
 
 Boundary rule: 机制 vs 配置是 Harness 和 Vibe Coding 的分水岭。"agent 怎么工作的"→ Harness；"agent 怎么配 / 怎么用 / 怎么选"→ Vibe Coding。
 
+## Dependencies
+
+`package.json` `overrides` pins `yaml` to 2.9.0: `yaml-language-server` (transitive dep of `@astrojs/check`) pins `yaml@2.7.1` exactly, and the override unifies the tree on one modern version. Re-evaluate whether it is still needed when upgrading dependencies.
+
 ## Deployment
 
 GitHub Actions workflow (`.github/workflows/deploy.yml`): Node 22, `npm ci`, `npm run build`, deploys `./dist` to GitHub Pages.
-
-## Legacy
-
-Root directories `_includes/`, `_layouts/`, `static/`, `pages/` are empty remnants of the original Jekyll setup and can be removed.

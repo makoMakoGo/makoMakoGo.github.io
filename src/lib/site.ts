@@ -15,8 +15,6 @@ export const site = {
   domainUrl: 'https://makoMakoGo.github.io',
   baseUrl: '',
   extClickEffect: true,
-  extMath: false,
-  extCount: false,
   links: [
     {
       title: 'veyliss',

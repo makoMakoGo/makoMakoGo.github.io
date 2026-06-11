@@ -1,26 +1,7 @@
 ;(function () {
-  const blog = window.blog || (window.blog = {})
-
-  const onReady =
-    blog.ready ||
-    function (fn) {
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', fn, { once: true })
-        return
-      }
-      fn()
-    }
-
-  const escapeHtml =
-    blog.escapeHtml ||
-    function (value) {
-      return String(value)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;')
-    }
+  const blog = window.blog
+  const onReady = blog.ready
+  const escapeHtml = blog.escapeHtml
 
   const setLoading = function (loading) {
     const icon = document.querySelector('.page-search .icon-loading')
@@ -91,7 +72,7 @@
     }
 
     const render = function (rawKey) {
-      const key = blog.trim(rawKey)
+      const key = rawKey.trim()
 
       items.forEach(function (item, index) {
         const title = titles[index] || ''

@@ -9,7 +9,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Cascadia Code', Consolas, Helvetica, 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
-  overflow-y: overlay;
 }
 html[transition] {
   transition: all 500ms ease;
@@ -56,18 +55,6 @@ textarea {
 pre,
 code {
   font-family: inherit;
-}
-input:-webkit-autofill {
-  /* 自动填充的文本颜色 */
-  -webkit-text-fill-color: #333333 !important;
-  /* -webkit-text-fill-color: var(--text-color) !important; */
-
-  /* 方式1：使用内阴影覆盖自动填充的背景色 */
-  /* box-shadow: 0 0 0 1000px #ffffff inset !important; */
-
-  /* 方式2：通过延迟一个月，取消自动填充的背景色 */
-  -webkit-transition: background-color 2592000s ease-in-out 0s;
-  transition: background-color 2592000s ease-in-out 0s;
 }
 ::-webkit-scrollbar {
   width: 5px;

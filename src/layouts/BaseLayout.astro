@@ -19,7 +19,6 @@ const {
 
 const buildAt = new Date().toISOString().replace(/\D/g, '').slice(0, 14);
 const pageTitle = `${title}-${site.title}`;
-const cleanupScriptUrl = withBase(`/static/js/sw-cleanup.js?t=${buildAt}`);
 ---
 
 <!DOCTYPE html>
@@ -30,17 +29,14 @@ const cleanupScriptUrl = withBase(`/static/js/sw-cleanup.js?t=${buildAt}`);
     <meta http-equiv="content-language" content="zh-CN" />
     <meta name="theme-color" content="#ffffff" />
     <meta name="supported-color-schemes" content="light dark" />
-    <meta name="renderer" content="webkit" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content={site.author} />
     <meta name="description" content={pageDescription} />
     <meta name="keywords" content={pageKeywords} />
     <link rel="icon" href={withBase('/favicon.ico')} />
     <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
     <link rel="stylesheet" href={withBase(`/static/css/common.css?t=${buildAt}`)} />
-    <link rel="stylesheet" href={withBase('/static/css/theme-dark.css')} />
+    <link rel="stylesheet" href={withBase(`/static/css/theme-dark.css?t=${buildAt}`)} />
     {layoutType === 'post' ? (
       <link rel="stylesheet" href={withBase(`/static/css/post.css?t=${buildAt}`)} />
     ) : (
@@ -64,7 +60,6 @@ const cleanupScriptUrl = withBase(`/static/js/sw-cleanup.js?t=${buildAt}`);
       };
       window.blog.initDarkMode(localStorage.darkMode);
     </script>
-    <script is:inline type="text/javascript" src={cleanupScriptUrl}></script>
   </head>
   <body>
     <Header />
