@@ -6,4 +6,13 @@ export default defineConfig({
     format: 'file',
   },
   trailingSlash: 'ignore',
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+      defaultColor: false,
+    },
+  },
 });

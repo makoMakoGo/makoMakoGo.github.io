@@ -42,14 +42,7 @@ const cleanupScriptUrl = withBase(`/static/js/sw-cleanup.js?t=${buildAt}`);
     <link rel="stylesheet" href={withBase(`/static/css/common.css?t=${buildAt}`)} />
     <link rel="stylesheet" href={withBase('/static/css/theme-dark.css')} />
     {layoutType === 'post' ? (
-      <>
-        <link rel="stylesheet" href={withBase(`/static/css/post.css?t=${buildAt}`)} />
-        <link rel="stylesheet" href={withBase('/static/css/code-dark.css')} />
-        <link rel="stylesheet" href={withBase('/static/css/code-light.css')} />
-        <style is:inline>
-          {`.astro-code{font-size:13px;padding:10px;overflow:auto;border-radius:2px;max-height:610px;line-height:1.6;background:#f8f8f8}.astro-code code{background:transparent!important;padding:0!important;margin:0!important;border-radius:0!important}.dark .astro-code{background:#161b22;color:#abb2bf}.dark .astro-code span{color:inherit}`}
-        </style>
-      </>
+      <link rel="stylesheet" href={withBase(`/static/css/post.css?t=${buildAt}`)} />
     ) : (
       <link rel="stylesheet" href={withBase(`/static/css/page.css?t=${buildAt}`)} />
     )}

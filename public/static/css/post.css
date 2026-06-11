@@ -114,6 +114,26 @@
   border-radius: unset;
   color: inherit;
 }
+.astro-code,
+.astro-code span {
+  color: var(--shiki-light);
+  font-style: var(--shiki-light-font-style);
+  font-weight: var(--shiki-light-font-weight);
+  text-decoration: var(--shiki-light-text-decoration);
+}
+.astro-code {
+  background-color: #f8f8f8;
+}
+html.dark .astro-code,
+html.dark .astro-code span {
+  color: var(--shiki-dark);
+  font-style: var(--shiki-dark-font-style);
+  font-weight: var(--shiki-dark-font-weight);
+  text-decoration: var(--shiki-dark-text-decoration);
+}
+html.dark .astro-code {
+  background-color: #161b22;
+}
 .page-post hr {
   border: none;
   height: 3px;
